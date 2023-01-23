@@ -1,6 +1,6 @@
 ﻿namespace PatientsForm
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.tb_loginUsername = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.bt_Login = new ReaLTaiizor.Controls.MaterialButton();
             this.tb_loginPassword = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
+            this.bt_Register = new ReaLTaiizor.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // tb_loginUsername
@@ -120,39 +120,41 @@
             this.tb_loginPassword.UseAccent = false;
             this.tb_loginPassword.UseSystemPasswordChar = false;
             // 
-            // materialButton1
+            // bt_Register
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton1.Location = new System.Drawing.Point(169, 280);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(152, 40);
-            this.materialButton1.TabIndex = 5;
-            this.materialButton1.Text = "REGISTER";
-            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.bt_Register.AutoSize = false;
+            this.bt_Register.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bt_Register.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.bt_Register.Depth = 0;
+            this.bt_Register.HighEmphasis = true;
+            this.bt_Register.Icon = null;
+            this.bt_Register.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.bt_Register.Location = new System.Drawing.Point(169, 280);
+            this.bt_Register.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.bt_Register.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.bt_Register.Name = "bt_Register";
+            this.bt_Register.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.bt_Register.Size = new System.Drawing.Size(152, 40);
+            this.bt_Register.TabIndex = 5;
+            this.bt_Register.Text = "REGISTER";
+            this.bt_Register.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.bt_Register.UseAccentColor = false;
+            this.bt_Register.UseVisualStyleBackColor = true;
+            this.bt_Register.Click += new System.EventHandler(this.bt_Register_Click);
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 359);
-            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.bt_Register);
             this.Controls.Add(this.tb_loginPassword);
             this.Controls.Add(this.bt_Login);
             this.Controls.Add(this.tb_loginUsername);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.ResumeLayout(false);
 
         }
@@ -162,6 +164,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_loginUsername;
         private ReaLTaiizor.Controls.MaterialButton bt_Login;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_loginPassword;
-        private ReaLTaiizor.Controls.MaterialButton materialButton1;
+        private ReaLTaiizor.Controls.MaterialButton bt_Register;
     }
 }

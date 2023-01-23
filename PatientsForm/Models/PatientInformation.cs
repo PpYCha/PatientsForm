@@ -21,8 +21,9 @@ namespace PatientsForm.models
         public string? Sex { get; set; }
         public string? CivilStatus { get; set; }
 
-        //public ICollection<ExaminationTreatment> ExaminationTreatment { get; internal set; }
+       
         public virtual ObservableCollectionListSource<ExaminationTreatment> ExaminationTreatments { get; } = new();
+        public virtual ObservableCollectionListSource<Prescription> Prescriptions { get; } = new();
 
     }
 }

@@ -21,6 +21,8 @@ namespace PatientsForm
 
         private PatientContext? dbContext;
         private int patientIdSelected;
+        public static Boolean isLogin = false;
+
         public DashboardForm()
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace PatientsForm
         {
             base.OnLoad(e);
 
+
+
             this.dbContext = new PatientContext();
 
             // Uncomment the line below to start fresh with a new database.
@@ -45,6 +49,25 @@ namespace PatientsForm
             this.patientInformationBindingSource.DataSource = dbContext.PatientsInformation.Local.ToBindingList();
 
             this.userAccountBindingSource.DataSource = dbContext.UserAccounts.Local.ToBindingList();
+
+            if (isLogin)
+            {
+
+               
+            } else
+            {
+                //foreach (Control control in this.Controls)
+                //{
+                //    control.Enabled = false;
+                //}
+
+                LoginForm loginForm =  new LoginForm();
+                loginForm.TopMost = true;
+                loginForm.ShowDialog();
+                loginForm.BringToFront();
+                loginForm.Activate();
+            }
+
         }
 
 
@@ -166,10 +189,24 @@ namespace PatientsForm
                     BloodPressure = tb_BloodPressure.Text,
                     HeartRate = tb_HeartRate.Text,
                     Temperature= tb_Temperature.Text,
+
                 };
                 context.ExaminationTreatments.Add(examinationTreatment);
                 context.SaveChanges();
+
+                var prescription = new Prescription
+                {
+                    PatientId = patientIdSelected,
+                    Diagnosis = tb_Diagnosis.Text,
+                    Clinician = tb_Clinician.Text,
+                    Medecine = tb_Medicine.Text,
+                    Instructions= tb_Instructions.Text,
+                };
+                context.Prescriptions.Add(prescription);  
+                context.SaveChanges();
             }
+
+
 
         }
 
@@ -181,6 +218,7 @@ namespace PatientsForm
                 {
                     FirstName = tb_uFirstName.Text, 
                     LastName = tb_uLastName.Text,
+                    Username = tb_uUserName.Text,
                     Password = tb_uPassword.Text,
                     Usertype = cb_Usertype.Text,
                    
@@ -194,6 +232,18 @@ namespace PatientsForm
 
                 this.dataGridView1.Refresh();
             }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PatientProfileForm patientProfileForm = new PatientProfileForm(patientIdSelected);
+
+            patientProfileForm.ShowDialog();
+        }
+
+        private void materialTextBoxEdit1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
