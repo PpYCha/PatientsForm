@@ -39,10 +39,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="Reports\MedCertRpt.cs">
+    <Compile Update="Reports\MedCert.cs">
+      <SubType>Component</SubType>
+      <DependentUpon>MedCert.rpt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>MedCertRpt.rpt</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\MedHealthRecordRpt.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MedHealthRecordRpt.rpt</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -51,9 +57,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Update="Reports\MedCertRpt.rpt">
+    <None Update="Reports\MedCert.rpt">
+      <LastGenOutput>MedCert.cs</LastGenOutput>
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MedCertRpt.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\MedHealthRecordRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MedHealthRecordRpt.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

@@ -16,14 +16,14 @@ namespace PatientsForm.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class MedCertRpt : ReportClass {
+    public class MedCert : ReportClass {
         
-        public MedCertRpt() {
+        public MedCert() {
         }
         
         public override string ResourceName {
             get {
-                return "MedCertRpt.rpt";
+                return "MedCert.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace PatientsForm.Reports {
         
         public override string FullResourceName {
             get {
-                return "PatientsForm.Reports.MedCertRpt.rpt";
+                return "PatientsForm.Reports.MedCert.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace PatientsForm.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedMedCertRpt : Component, ICachedReport {
+    public class CachedMedCert : Component, ICachedReport {
         
-        public CachedMedCertRpt() {
+        public CachedMedCert() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace PatientsForm.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            MedCertRpt rpt = new MedCertRpt();
+            MedCert rpt = new MedCert();
             rpt.Site = this.Site;
             return rpt;
         }
