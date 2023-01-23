@@ -83,11 +83,6 @@ namespace PatientsForm
         }
 
 
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void materialTextBoxEdit1_Click(object sender, EventArgs e)
         {
 
@@ -244,6 +239,23 @@ namespace PatientsForm
         private void materialTextBoxEdit1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void tb_Search_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = tb_Search.Text;
+
+            var patients = this.dbContext.PatientsInformation.Where(p => p.FirstName.Contains(searchText) || p.LastName.Contains(searchText) || p.PatientId.ToString().Contains(searchText)).ToList();
+
+            if (patients.Count() > 0)
+            {
+             
+                dataGridView1.DataSource = patients;
+            }
+            else
+            {
+                // Handle the case when no patients are found
+            }
         }
     }
 }

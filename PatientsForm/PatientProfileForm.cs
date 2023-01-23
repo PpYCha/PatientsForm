@@ -27,7 +27,7 @@ namespace PatientsForm
 
         private void PatientProfileForm_Load(object sender, EventArgs e)
         {
-            ^
+            
             this.dbContext = new PatientContext();
 
 

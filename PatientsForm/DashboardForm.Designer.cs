@@ -34,6 +34,7 @@ namespace PatientsForm
             this.materialTabControl1 = new ReaLTaiizor.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialCard6 = new ReaLTaiizor.Controls.MaterialCard();
+            this.tb_Search = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,8 @@ namespace PatientsForm
             this.civilStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
+            this.tb_Clinician = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.tb_Diagnosis = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.bt_SaveExaminationTreatment = new ReaLTaiizor.Controls.MaterialButton();
             this.materialDivider2 = new ReaLTaiizor.Controls.MaterialDivider();
             this.materialLabel6 = new ReaLTaiizor.Controls.MaterialLabel();
@@ -99,14 +102,11 @@ namespace PatientsForm
             this.tb_uLastName = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_uFirstName = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialLabel5 = new ReaLTaiizor.Controls.MaterialLabel();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.menuIconList = new System.Windows.Forms.ImageList(this.components);
             this.materialCheckBox1 = new ReaLTaiizor.Controls.MaterialCheckBox();
             this.materialCheckBox2 = new ReaLTaiizor.Controls.MaterialCheckBox();
             this.materialCheckBox3 = new ReaLTaiizor.Controls.MaterialCheckBox();
             this.materialCheckBox4 = new ReaLTaiizor.Controls.MaterialCheckBox();
-            this.tb_Diagnosis = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.tb_Clinician = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard6.SuspendLayout();
@@ -126,7 +126,6 @@ namespace PatientsForm
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.menuIconList;
@@ -159,6 +158,7 @@ namespace PatientsForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.tb_Search);
             this.materialCard6.Controls.Add(this.dataGridView1);
             this.materialCard6.Depth = 0;
             this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -170,10 +170,48 @@ namespace PatientsForm
             this.materialCard6.Size = new System.Drawing.Size(829, 332);
             this.materialCard6.TabIndex = 5;
             // 
+            // tb_Search
+            // 
+            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_Search.AnimateReadOnly = false;
+            this.tb_Search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tb_Search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tb_Search.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tb_Search.Depth = 0;
+            this.tb_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_Search.HideSelection = true;
+            this.tb_Search.Hint = "Name, Patient Id, ";
+            this.tb_Search.LeadingIcon = null;
+            this.tb_Search.Location = new System.Drawing.Point(18, 14);
+            this.tb_Search.MaxLength = 32767;
+            this.tb_Search.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.tb_Search.Name = "tb_Search";
+            this.tb_Search.PasswordChar = '\0';
+            this.tb_Search.PrefixSuffixText = null;
+            this.tb_Search.ReadOnly = false;
+            this.tb_Search.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_Search.SelectedText = "";
+            this.tb_Search.SelectionLength = 0;
+            this.tb_Search.SelectionStart = 0;
+            this.tb_Search.ShortcutsEnabled = true;
+            this.tb_Search.Size = new System.Drawing.Size(793, 48);
+            this.tb_Search.TabIndex = 5;
+            this.tb_Search.TabStop = false;
+            this.tb_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_Search.TrailingIcon = null;
+            this.tb_Search.UseAccent = false;
+            this.tb_Search.UseSystemPasswordChar = false;
+            this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -188,15 +226,14 @@ namespace PatientsForm
             this.sexDataGridViewTextBoxColumn,
             this.civilStatusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.patientInformationBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 14);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 68);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(801, 304);
+            this.dataGridView1.Size = new System.Drawing.Size(801, 250);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -294,6 +331,71 @@ namespace PatientsForm
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(1625, 336);
             this.materialCard2.TabIndex = 4;
+            // 
+            // tb_Clinician
+            // 
+            this.tb_Clinician.AnimateReadOnly = false;
+            this.tb_Clinician.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tb_Clinician.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_Clinician.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tb_Clinician.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tb_Clinician.Depth = 0;
+            this.tb_Clinician.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_Clinician.HideSelection = true;
+            this.tb_Clinician.Hint = "Clinician";
+            this.tb_Clinician.LeadingIcon = null;
+            this.tb_Clinician.Location = new System.Drawing.Point(790, 121);
+            this.tb_Clinician.MaxLength = 32767;
+            this.tb_Clinician.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.tb_Clinician.Name = "tb_Clinician";
+            this.tb_Clinician.PasswordChar = '\0';
+            this.tb_Clinician.PrefixSuffixText = null;
+            this.tb_Clinician.ReadOnly = false;
+            this.tb_Clinician.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_Clinician.SelectedText = "";
+            this.tb_Clinician.SelectionLength = 0;
+            this.tb_Clinician.SelectionStart = 0;
+            this.tb_Clinician.ShortcutsEnabled = true;
+            this.tb_Clinician.Size = new System.Drawing.Size(310, 48);
+            this.tb_Clinician.TabIndex = 29;
+            this.tb_Clinician.TabStop = false;
+            this.tb_Clinician.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_Clinician.TrailingIcon = null;
+            this.tb_Clinician.UseAccent = false;
+            this.tb_Clinician.UseSystemPasswordChar = false;
+            // 
+            // tb_Diagnosis
+            // 
+            this.tb_Diagnosis.AnimateReadOnly = false;
+            this.tb_Diagnosis.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tb_Diagnosis.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_Diagnosis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tb_Diagnosis.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tb_Diagnosis.Depth = 0;
+            this.tb_Diagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_Diagnosis.HideSelection = true;
+            this.tb_Diagnosis.Hint = "Diagnosis";
+            this.tb_Diagnosis.LeadingIcon = null;
+            this.tb_Diagnosis.Location = new System.Drawing.Point(790, 66);
+            this.tb_Diagnosis.MaxLength = 32767;
+            this.tb_Diagnosis.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.tb_Diagnosis.Name = "tb_Diagnosis";
+            this.tb_Diagnosis.PasswordChar = '\0';
+            this.tb_Diagnosis.PrefixSuffixText = null;
+            this.tb_Diagnosis.ReadOnly = false;
+            this.tb_Diagnosis.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_Diagnosis.SelectedText = "";
+            this.tb_Diagnosis.SelectionLength = 0;
+            this.tb_Diagnosis.SelectionStart = 0;
+            this.tb_Diagnosis.ShortcutsEnabled = true;
+            this.tb_Diagnosis.Size = new System.Drawing.Size(310, 48);
+            this.tb_Diagnosis.TabIndex = 28;
+            this.tb_Diagnosis.TabStop = false;
+            this.tb_Diagnosis.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_Diagnosis.TrailingIcon = null;
+            this.tb_Diagnosis.UseAccent = false;
+            this.tb_Diagnosis.UseSystemPasswordChar = false;
+            this.tb_Diagnosis.Click += new System.EventHandler(this.materialTextBoxEdit1_Click_1);
             // 
             // bt_SaveExaminationTreatment
             // 
@@ -1119,7 +1221,7 @@ namespace PatientsForm
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1352, 705);
+            this.tabPage2.Size = new System.Drawing.Size(1669, 705);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Manage User";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -1450,17 +1552,6 @@ namespace PatientsForm
             this.materialLabel5.TabIndex = 0;
             this.materialLabel5.Text = "User Information";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.ImageKey = "home_FILL0_wght400_GRAD0_opsz48.png";
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1352, 705);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Home";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
             // menuIconList
             // 
             this.menuIconList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
@@ -1538,71 +1629,6 @@ namespace PatientsForm
             this.materialCheckBox4.UseAccentColor = false;
             this.materialCheckBox4.UseVisualStyleBackColor = true;
             // 
-            // tb_Diagnosis
-            // 
-            this.tb_Diagnosis.AnimateReadOnly = false;
-            this.tb_Diagnosis.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.tb_Diagnosis.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tb_Diagnosis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tb_Diagnosis.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tb_Diagnosis.Depth = 0;
-            this.tb_Diagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_Diagnosis.HideSelection = true;
-            this.tb_Diagnosis.Hint = "Diagnosis";
-            this.tb_Diagnosis.LeadingIcon = null;
-            this.tb_Diagnosis.Location = new System.Drawing.Point(790, 66);
-            this.tb_Diagnosis.MaxLength = 32767;
-            this.tb_Diagnosis.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.tb_Diagnosis.Name = "tb_Diagnosis";
-            this.tb_Diagnosis.PasswordChar = '\0';
-            this.tb_Diagnosis.PrefixSuffixText = null;
-            this.tb_Diagnosis.ReadOnly = false;
-            this.tb_Diagnosis.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tb_Diagnosis.SelectedText = "";
-            this.tb_Diagnosis.SelectionLength = 0;
-            this.tb_Diagnosis.SelectionStart = 0;
-            this.tb_Diagnosis.ShortcutsEnabled = true;
-            this.tb_Diagnosis.Size = new System.Drawing.Size(310, 48);
-            this.tb_Diagnosis.TabIndex = 28;
-            this.tb_Diagnosis.TabStop = false;
-            this.tb_Diagnosis.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tb_Diagnosis.TrailingIcon = null;
-            this.tb_Diagnosis.UseAccent = false;
-            this.tb_Diagnosis.UseSystemPasswordChar = false;
-            this.tb_Diagnosis.Click += new System.EventHandler(this.materialTextBoxEdit1_Click_1);
-            // 
-            // tb_Clinician
-            // 
-            this.tb_Clinician.AnimateReadOnly = false;
-            this.tb_Clinician.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.tb_Clinician.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tb_Clinician.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tb_Clinician.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tb_Clinician.Depth = 0;
-            this.tb_Clinician.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_Clinician.HideSelection = true;
-            this.tb_Clinician.Hint = "Clinician";
-            this.tb_Clinician.LeadingIcon = null;
-            this.tb_Clinician.Location = new System.Drawing.Point(790, 121);
-            this.tb_Clinician.MaxLength = 32767;
-            this.tb_Clinician.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.tb_Clinician.Name = "tb_Clinician";
-            this.tb_Clinician.PasswordChar = '\0';
-            this.tb_Clinician.PrefixSuffixText = null;
-            this.tb_Clinician.ReadOnly = false;
-            this.tb_Clinician.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tb_Clinician.SelectedText = "";
-            this.tb_Clinician.SelectionLength = 0;
-            this.tb_Clinician.SelectionStart = 0;
-            this.tb_Clinician.ShortcutsEnabled = true;
-            this.tb_Clinician.Size = new System.Drawing.Size(310, 48);
-            this.tb_Clinician.TabIndex = 29;
-            this.tb_Clinician.TabStop = false;
-            this.tb_Clinician.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tb_Clinician.TrailingIcon = null;
-            this.tb_Clinician.UseAccent = false;
-            this.tb_Clinician.UseSystemPasswordChar = false;
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1642,7 +1668,6 @@ namespace PatientsForm
         private ReaLTaiizor.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ImageList menuIconList;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Address;
         private ReaLTaiizor.Controls.MaterialCard materialCard1;
@@ -1719,6 +1744,7 @@ namespace PatientsForm
         private System.Windows.Forms.DataGridViewTextBoxColumn usertypeDataGridViewTextBoxColumn;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Diagnosis;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Clinician;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Search;
     }
 }
 

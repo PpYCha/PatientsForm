@@ -609,7 +609,7 @@
             this.materialButton2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(205, 100);
+            this.materialButton2.Size = new System.Drawing.Size(221, 100);
             this.materialButton2.TabIndex = 15;
             this.materialButton2.Text = "Print Medical Health Record";
             this.materialButton2.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
