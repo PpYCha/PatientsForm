@@ -41,7 +41,7 @@ namespace PatientsForm
             this.dbContext = new PatientContext();
 
             // Uncomment the line below to start fresh with a new database.
-            //this.dbContext.Database.EnsureDeleted();
+            this.dbContext.Database.EnsureDeleted();
             this.dbContext.Database.EnsureCreated();
 
             this.dbContext.PatientsInformation.Load();

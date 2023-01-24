@@ -1,6 +1,6 @@
 ﻿namespace PatientsForm
 {
-    partial class ReportViewerFrm
+    partial class ReportFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // ReportViewerFrm
+            // reportViewer
+            // 
+            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer.Name = "ReportViewer";
+            this.reportViewer.ServerReport.BearerToken = null;
+            this.reportViewer.Size = new System.Drawing.Size(1315, 757);
+            this.reportViewer.TabIndex = 0;
+            // 
+            // ReportFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Name = "ReportViewerFrm";
-            this.Text = "ReportViewerFrm";
+            this.ClientSize = new System.Drawing.Size(1315, 757);
+            this.Controls.Add(this.reportViewer);
+            this.Name = "ReportFrm";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
     }
 }

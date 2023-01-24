@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using Microsoft.EntityFrameworkCore;
 using PatientsForm.models;
 using ReaLTaiizor.Forms;
 using System;
@@ -41,6 +42,17 @@ namespace PatientsForm
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            ReportFrm reportFrm = new ReportFrm();
+            reportFrm.ShowDialog();
+        }
+
+        private void bt_savePatient_Click(object sender, EventArgs e)
         {
 
         }

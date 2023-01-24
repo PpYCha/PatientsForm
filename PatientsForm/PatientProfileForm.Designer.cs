@@ -153,6 +153,7 @@
             this.bt_savePatient.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.bt_savePatient.UseAccentColor = false;
             this.bt_savePatient.UseVisualStyleBackColor = true;
+            this.bt_savePatient.Click += new System.EventHandler(this.bt_savePatient_Click);
             // 
             // cb_CivilStatus
             // 
@@ -593,6 +594,7 @@
             this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // materialButton2
             // 

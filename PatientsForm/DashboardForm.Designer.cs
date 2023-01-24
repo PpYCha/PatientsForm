@@ -440,9 +440,9 @@ namespace PatientsForm
             this.materialLabel6.Location = new System.Drawing.Point(783, 14);
             this.materialLabel6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(195, 41);
+            this.materialLabel6.Size = new System.Drawing.Size(184, 41);
             this.materialLabel6.TabIndex = 23;
-            this.materialLabel6.Text = "Prescrtiption";
+            this.materialLabel6.Text = "Prescription";
             // 
             // tb_Instructions
             // 
