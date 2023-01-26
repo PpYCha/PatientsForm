@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            this.materialLabel3 = new ReaLTaiizor.Controls.MaterialLabel();
+            this.dtp_Birthday = new System.Windows.Forms.DateTimePicker();
             this.materialLabel1 = new ReaLTaiizor.Controls.MaterialLabel();
             this.bt_Cancel = new ReaLTaiizor.Controls.MaterialButton();
             this.bt_savePatient = new ReaLTaiizor.Controls.MaterialButton();
@@ -37,12 +39,11 @@
             this.cb_Sex = new ReaLTaiizor.Controls.MaterialComboBox();
             this.tb_Age = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_ContactNumber = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.tb_Birthday = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_LastName = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_MiddleName = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_FirstName = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_Address = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_examination = new System.Windows.Forms.DataGridView();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,7 @@
             this.illicitDrugDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alcoholDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.examinationTreatmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_prescription = new System.Windows.Forms.DataGridView();
             this.medecineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clinicianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,18 +64,20 @@
             this.prescriptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.materialButton2 = new ReaLTaiizor.Controls.MaterialButton();
+            this.materialLabel2 = new ReaLTaiizor.Controls.MaterialLabel();
+            this.materialLabel6 = new ReaLTaiizor.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_examination)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.examinationTreatmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prescriptionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCard1
             // 
-            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialLabel3);
+            this.materialCard1.Controls.Add(this.dtp_Birthday);
             this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Controls.Add(this.bt_Cancel);
             this.materialCard1.Controls.Add(this.bt_savePatient);
@@ -82,7 +85,6 @@
             this.materialCard1.Controls.Add(this.cb_Sex);
             this.materialCard1.Controls.Add(this.tb_Age);
             this.materialCard1.Controls.Add(this.tb_ContactNumber);
-            this.materialCard1.Controls.Add(this.tb_Birthday);
             this.materialCard1.Controls.Add(this.tb_LastName);
             this.materialCard1.Controls.Add(this.tb_MiddleName);
             this.materialCard1.Controls.Add(this.tb_FirstName);
@@ -96,6 +98,25 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(785, 338);
             this.materialCard1.TabIndex = 3;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(18, 177);
+            this.materialLabel3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(65, 19);
+            this.materialLabel3.TabIndex = 15;
+            this.materialLabel3.Text = "Birthdate";
+            // 
+            // dtp_Birthday
+            // 
+            this.dtp_Birthday.Location = new System.Drawing.Point(18, 199);
+            this.dtp_Birthday.Name = "dtp_Birthday";
+            this.dtp_Birthday.Size = new System.Drawing.Size(249, 23);
+            this.dtp_Birthday.TabIndex = 14;
             // 
             // materialLabel1
             // 
@@ -153,6 +174,7 @@
             this.bt_savePatient.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.bt_savePatient.UseAccentColor = false;
             this.bt_savePatient.UseVisualStyleBackColor = true;
+            this.bt_savePatient.Click += new System.EventHandler(this.bt_savePatient_Click);
             // 
             // cb_CivilStatus
             // 
@@ -273,38 +295,6 @@
             this.tb_ContactNumber.TrailingIcon = null;
             this.tb_ContactNumber.UseAccent = false;
             this.tb_ContactNumber.UseSystemPasswordChar = false;
-            // 
-            // tb_Birthday
-            // 
-            this.tb_Birthday.AnimateReadOnly = false;
-            this.tb_Birthday.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.tb_Birthday.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tb_Birthday.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tb_Birthday.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tb_Birthday.Depth = 0;
-            this.tb_Birthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_Birthday.HideSelection = true;
-            this.tb_Birthday.Hint = "Birthday";
-            this.tb_Birthday.LeadingIcon = null;
-            this.tb_Birthday.Location = new System.Drawing.Point(17, 174);
-            this.tb_Birthday.MaxLength = 32767;
-            this.tb_Birthday.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.tb_Birthday.Name = "tb_Birthday";
-            this.tb_Birthday.PasswordChar = '\0';
-            this.tb_Birthday.PrefixSuffixText = null;
-            this.tb_Birthday.ReadOnly = false;
-            this.tb_Birthday.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tb_Birthday.SelectedText = "";
-            this.tb_Birthday.SelectionLength = 0;
-            this.tb_Birthday.SelectionStart = 0;
-            this.tb_Birthday.ShortcutsEnabled = true;
-            this.tb_Birthday.Size = new System.Drawing.Size(250, 48);
-            this.tb_Birthday.TabIndex = 5;
-            this.tb_Birthday.TabStop = false;
-            this.tb_Birthday.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tb_Birthday.TrailingIcon = null;
-            this.tb_Birthday.UseAccent = false;
-            this.tb_Birthday.UseSystemPasswordChar = false;
             // 
             // tb_LastName
             // 
@@ -434,11 +424,19 @@
             this.tb_Address.UseAccent = false;
             this.tb_Address.UseSystemPasswordChar = false;
             // 
-            // dataGridView1
+            // dataGridView_examination
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_examination.AllowUserToAddRows = false;
+            this.dataGridView_examination.AllowUserToDeleteRows = false;
+            this.dataGridView_examination.AllowUserToResizeColumns = false;
+            this.dataGridView_examination.AllowUserToResizeRows = false;
+            this.dataGridView_examination.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_examination.AutoGenerateColumns = false;
+            this.dataGridView_examination.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_examination.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_examination.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dateDataGridViewTextBoxColumn,
             this.weightDataGridViewTextBoxColumn,
             this.heightDataGridViewTextBoxColumn,
@@ -450,13 +448,13 @@
             this.smokingDataGridViewTextBoxColumn,
             this.illicitDrugDataGridViewTextBoxColumn,
             this.alcoholDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.examinationTreatmentBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 451);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1521, 199);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView_examination.DataSource = this.examinationTreatmentBindingSource;
+            this.dataGridView_examination.Location = new System.Drawing.Point(4, 474);
+            this.dataGridView_examination.Name = "dataGridView_examination";
+            this.dataGridView_examination.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_examination.Size = new System.Drawing.Size(1521, 176);
+            this.dataGridView_examination.TabIndex = 4;
+            this.dataGridView_examination.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -528,21 +526,29 @@
             // 
             this.examinationTreatmentBindingSource.DataSource = typeof(PatientsForm.Models.ExaminationTreatment);
             // 
-            // dataGridView2
+            // dataGridView_prescription
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_prescription.AllowUserToAddRows = false;
+            this.dataGridView_prescription.AllowUserToDeleteRows = false;
+            this.dataGridView_prescription.AllowUserToResizeColumns = false;
+            this.dataGridView_prescription.AllowUserToResizeRows = false;
+            this.dataGridView_prescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_prescription.AutoGenerateColumns = false;
+            this.dataGridView_prescription.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_prescription.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_prescription.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.medecineDataGridViewTextBoxColumn,
             this.instructionsDataGridViewTextBoxColumn,
             this.clinicianDataGridViewTextBoxColumn,
             this.diagnosisDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.prescriptionBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(819, 78);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(686, 255);
-            this.dataGridView2.TabIndex = 5;
+            this.dataGridView_prescription.DataSource = this.prescriptionBindingSource;
+            this.dataGridView_prescription.Location = new System.Drawing.Point(819, 122);
+            this.dataGridView_prescription.Name = "dataGridView_prescription";
+            this.dataGridView_prescription.RowTemplate.Height = 25;
+            this.dataGridView_prescription.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_prescription.Size = new System.Drawing.Size(686, 294);
+            this.dataGridView_prescription.TabIndex = 5;
             // 
             // medecineDataGridViewTextBoxColumn
             // 
@@ -574,6 +580,7 @@
             // 
             // materialButton1
             // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton1.AutoSize = false;
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -582,12 +589,12 @@
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
             this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton1.Location = new System.Drawing.Point(946, 342);
+            this.materialButton1.Location = new System.Drawing.Point(1073, 425);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(205, 100);
+            this.materialButton1.Size = new System.Drawing.Size(205, 35);
             this.materialButton1.TabIndex = 14;
             this.materialButton1.Text = "Print Medicial Certificate";
             this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -596,6 +603,7 @@
             // 
             // materialButton2
             // 
+            this.materialButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton2.AutoSize = false;
             this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton2.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -604,27 +612,56 @@
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
             this.materialButton2.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton2.Location = new System.Drawing.Point(1190, 342);
+            this.materialButton2.Location = new System.Drawing.Point(1286, 425);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(221, 100);
+            this.materialButton2.Size = new System.Drawing.Size(221, 35);
             this.materialButton2.TabIndex = 15;
             this.materialButton2.Text = "Print Medical Health Record";
             this.materialButton2.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
             // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H4;
+            this.materialLabel2.Location = new System.Drawing.Point(17, 430);
+            this.materialLabel2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(420, 41);
+            this.materialLabel2.TabIndex = 16;
+            this.materialLabel2.Text = "Examination and Treatment";
+            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H4;
+            this.materialLabel6.Location = new System.Drawing.Point(819, 78);
+            this.materialLabel6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(195, 41);
+            this.materialLabel6.TabIndex = 24;
+            this.materialLabel6.Text = "Prescrtiption";
+            // 
             // PatientProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1527, 653);
+            this.Controls.Add(this.materialLabel6);
+            this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_prescription);
+            this.Controls.Add(this.dataGridView_examination);
             this.Controls.Add(this.materialCard1);
             this.Name = "PatientProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -633,11 +670,12 @@
             this.Load += new System.EventHandler(this.PatientProfileForm_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_examination)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.examinationTreatmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prescriptionBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -651,12 +689,11 @@
         private ReaLTaiizor.Controls.MaterialComboBox cb_Sex;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Age;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_ContactNumber;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Birthday;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_LastName;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_MiddleName;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_FirstName;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Address;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_examination;
         private System.Windows.Forms.BindingSource examinationTreatmentBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
@@ -669,7 +706,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn smokingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn illicitDrugDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alcoholDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView_prescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn medecineDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructionsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clinicianDataGridViewTextBoxColumn;
@@ -677,5 +714,9 @@
         private System.Windows.Forms.BindingSource prescriptionBindingSource;
         private ReaLTaiizor.Controls.MaterialButton materialButton1;
         private ReaLTaiizor.Controls.MaterialButton materialButton2;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel2;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel6;
+        private System.Windows.Forms.DateTimePicker dtp_Birthday;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel3;
     }
 }

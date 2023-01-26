@@ -30,6 +30,8 @@ namespace PatientsForm
             
             this.dbContext = new PatientContext();
 
+            populateData();
+
 
 
             this.dbContext.Prescriptions.Where(p => p.PatientId == patientIdSelected).Load();
@@ -40,7 +42,37 @@ namespace PatientsForm
             this.prescriptionBindingSource.DataSource = dbContext.Prescriptions.Local.ToBindingList();
         }
 
+        private void populateData()
+        {
+            using (var context = new PatientContext())
+            {
+                var patient = context.PatientsInformation.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+                if (patient != null)
+                {
+                    tb_FirstName.Text = patient.FirstName;
+                    tb_MiddleName.Text = patient.MiddleName;
+                    tb_LastName.Text = patient.LastName;
+                    tb_Address.Text = patient.Address;
+                    tb_ContactNumber.Text = patient.ContactNumber;
+                    dtp_Birthday.Value = patient.Birthday ?? DateTime.Now;
+                    tb_Age.Text = patient.Age;
+                    cb_Sex.Text = patient.Sex;
+                    cb_CivilStatus.Text = patient.CivilStatus;
+                }
+            }
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void materialLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_savePatient_Click(object sender, EventArgs e)
         {
 
         }

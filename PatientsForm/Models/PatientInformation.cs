@@ -16,7 +16,7 @@ namespace PatientsForm.models
         public string? LastName { get; set; }
         public string? Address { get; set; }
         public string? ContactNumber { get; set; }
-        public string? Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         public string? Age { get; set; }
         public string? Sex { get; set; }
         public string? CivilStatus { get; set; }

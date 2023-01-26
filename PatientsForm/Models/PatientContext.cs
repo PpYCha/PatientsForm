@@ -28,20 +28,7 @@ namespace PatientsForm.models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PatientInformation>().HasData(
-                new PatientInformation
-                {
-                    PatientId = 1,
-                    FirstName = "First Name",
-                    MiddleName = "Middle Name"  ,
-                    LastName="Last Name",
-                    Address ="Address",
-                    ContactNumber = "Contat Numver",
-                    Birthday = "Birthday",
-                    Age =" Age",
-                    Sex="Male",
-                    CivilStatus="SIngle"
-                });
+           
 
 
             modelBuilder.Entity<PatientInformation>().HasKey(k => k.PatientId);
@@ -49,10 +36,7 @@ namespace PatientsForm.models
             modelBuilder.Entity<Prescription>().HasKey(k => k.PrescriptionId);
             modelBuilder.Entity<UserAccount>().HasKey(k => k.UserId);
 
-        //    modelBuilder.Entity<ExaminationTreatment>()
-        //.HasMany<PatientInformation>(k => k.PatientInformation)
-        //.WithMany(p => p.ExaminationTreatment)
-        //.HasForeignKey<int?>(k => k.PatientId);
+       
 
 
         }

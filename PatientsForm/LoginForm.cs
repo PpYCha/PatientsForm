@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PatientsForm
 {
@@ -34,9 +35,9 @@ namespace PatientsForm
                    
                     else
                     {
-                      
+                     
                         DashboardForm.isLogin = true;
-
+                        
                     
                        
 
@@ -60,6 +61,23 @@ namespace PatientsForm
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
            
+        }
+
+        private void bt_Exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            panel1.Left = (this.Width - panel1.Width) / 2;
+            panel1.Top = (this.Height - panel1.Height) / 2;
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
