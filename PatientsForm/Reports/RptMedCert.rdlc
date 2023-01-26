@@ -26,10 +26,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.72854in</Top>
-            <Left>0.0775in</Left>
+            <Top>1.56187in</Top>
+            <Left>1.93385in</Left>
             <Height>0.26042in</Height>
-            <Width>7.13146in</Width>
+            <Width>3.40229in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -61,8 +61,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.80667in</Top>
-            <Left>5.68687in</Left>
+            <Top>2.68167in</Top>
+            <Left>5.39062in</Left>
             <Height>0.26042in</Height>
             <Width>0.89709in</Width>
             <ZIndex>1</ZIndex>
@@ -77,8 +77,8 @@
             </Style>
           </Textbox>
           <Line Name="Line2">
-            <Top>1.80667in</Top>
-            <Left>4.98958in</Left>
+            <Top>2.68167in</Top>
+            <Left>4.69333in</Left>
             <Height>0in</Height>
             <Width>2.27083in</Width>
             <ZIndex>2</ZIndex>
@@ -109,7 +109,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>3.15042in</Top>
+            <Top>3.77542in</Top>
+            <Left>2.05211cm</Left>
             <Height>0.26042in</Height>
             <Width>2.10542in</Width>
             <ZIndex>3</ZIndex>
@@ -125,6 +126,7 @@
           </Textbox>
           <Textbox Name="Textbox5">
             <CanGrow>true</CanGrow>
+            <CanShrink>true</CanShrink>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
@@ -147,12 +149,11 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>,  </Value>
+                    <Value>, </Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
                       <FontSize>11pt</FontSize>
                       <FontWeight>Normal</FontWeight>
-                      <TextDecoration>Underline</TextDecoration>
                     </Style>
                   </TextRun>
                   <TextRun>
@@ -165,16 +166,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>11pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>Underline</TextDecoration>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>years of age, a resident of </Value>
+                    <Value> years of age, a resident of </Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
                       <FontSize>11pt</FontSize>
@@ -208,7 +200,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> and was found </Value>
+                    <Value> and was diagnosed with </Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
                       <FontSize>11pt</FontSize>
@@ -216,7 +208,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!PatientIllnessDiseaseStatus.Value</Value>
+                    <Value>=Parameters!PatientDiagnosis.Value</Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
                       <FontSize>11pt</FontSize>
@@ -225,7 +217,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> in illness/diseases.</Value>
+                    <Value>.</Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
                       <FontSize>11pt</FontSize>
@@ -269,10 +261,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>3.74417in</Top>
-            <Left>0.03875in</Left>
-            <Height>1.4375in</Height>
-            <Width>7.20896in</Width>
+            <Top>4.36917in</Top>
+            <Left>0.80792in</Left>
+            <Height>3.42708in</Height>
+            <Width>6.15625in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -305,8 +297,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>6.76042in</Top>
-            <Left>5.15499in</Left>
+            <Top>9.38542in</Top>
+            <Left>5.33791in</Left>
             <Height>0.32292in</Height>
             <Width>1.60542in</Width>
             <ZIndex>5</ZIndex>
@@ -340,10 +332,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Physician</rd:DefaultName>
-            <Top>6.52084in</Top>
-            <Left>4.73958in</Left>
+            <Top>9.14584in</Top>
+            <Left>5.0475in</Left>
             <Height>0.25in</Height>
-            <Width>2.39583in</Width>
+            <Width>2.1875in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -375,11 +367,76 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PrintDate</rd:DefaultName>
-            <Top>1.55667in</Top>
-            <Left>4.98958in</Left>
+            <Top>2.43167in</Top>
+            <Left>4.69333in</Left>
             <Height>0.25in</Height>
             <Width>2.27083in</Width>
             <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Republic of the Philippines</Value>
+                    <Style>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>11pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>G.B TAN MEMORIAL HOSPITAL</Value>
+                    <Style>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Laoang Northern Samar</Value>
+                    <Style>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.65278in</Top>
+            <Left>1.93385in</Left>
+            <Height>0.625in</Height>
+            <Width>3.40229in</Width>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -394,94 +451,8 @@
         <Height>11.69in</Height>
         <Style />
       </Body>
-      <Width>8in</Width>
+      <Width>8.27in</Width>
       <Page>
-        <PageHeader>
-          <Height>1.43625in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox1">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Republic of the Philippines</Value>
-                      <Style>
-                        <FontFamily>cambria</FontFamily>
-                        <FontSize>11pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>G.B TAN MEMORIAL HOSPITAL</Value>
-                      <Style>
-                        <FontFamily>cambria</FontFamily>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Laoang Northern Samar</Value>
-                      <Style>
-                        <FontFamily>cambria</FontFamily>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.68625in</Top>
-              <Left>0.0775in</Left>
-              <Height>0.625in</Height>
-              <Width>7.13146in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageHeader>
-        <PageFooter>
-          <Height>1in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
         <PageHeight>11.69in</PageHeight>
         <PageWidth>8.27in</PageWidth>
         <LeftMargin>0.5in</LeftMargin>
@@ -510,7 +481,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="PatientIllnessDiseaseStatus">
+    <ReportParameter Name="PatientDiagnosis">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -551,7 +522,7 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>PatientIllnessDiseaseStatus</ParameterName>
+          <ParameterName>PatientDiagnosis</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>

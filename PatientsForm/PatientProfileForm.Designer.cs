@@ -174,7 +174,6 @@
             this.bt_savePatient.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.bt_savePatient.UseAccentColor = false;
             this.bt_savePatient.UseVisualStyleBackColor = true;
-            this.bt_savePatient.Click += new System.EventHandler(this.bt_savePatient_Click);
             // 
             // cb_CivilStatus
             // 
@@ -624,6 +623,7 @@
             this.materialButton2.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // materialLabel2
             // 
@@ -637,7 +637,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(420, 41);
             this.materialLabel2.TabIndex = 16;
             this.materialLabel2.Text = "Examination and Treatment";
-            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
             // materialLabel6
             // 

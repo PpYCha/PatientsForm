@@ -1,6 +1,7 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using Microsoft.EntityFrameworkCore;
 using PatientsForm.models;
+using PatientsForm.Models;
 using ReaLTaiizor.Forms;
 using System;
 using System.Collections.Generic;
@@ -67,5 +68,87 @@ namespace PatientsForm
         {
 
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            ReportFrm.printType = ReportFrm.printMedCert;
+
+            using (var context = new PatientContext())
+            {
+                var patient = context.PatientsInformation.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+                if (patient != null)
+                {
+                    _Filleds.PatientFullName = patient.FirstName + " " + patient.MiddleName + " " + patient.LastName;
+                    _Filleds.PatientResAddress = patient.Address;
+                    _Filleds.Age = patient.Age;
+                }
+            }
+
+            var pres = dbContext.Prescriptions.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+            if (pres != null)
+            {
+                _Filleds.Physician = pres.Clinician;
+                _Filleds.PatientDiagnosis = pres.Diagnosis;
+            }
+
+            var examTreat = dbContext.ExaminationTreatments.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+            if (examTreat != null)
+            {
+                _Filleds.ExaminationDate = examTreat.Date.ToString();
+            }
+
+            ReportFrm reportFrm = new ReportFrm();
+            reportFrm.ShowDialog();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            ReportFrm.printType = ReportFrm.printMedRecord;
+            using (var context = new PatientContext())
+            {
+                var patient = context.PatientsInformation.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+                if (patient != null)
+                {
+                    _Filleds.PatientID = patient.PatientId;
+                    _Filleds.PatientFullName = patient.FirstName + " " + patient.MiddleName + " " + patient.LastName;
+                    _Filleds.PatientResAddress = patient.Address;
+                    string date = patient.Birthday.Value.Date.ToString("dd/MM/yyyy");
+                    _Filleds.PatientBirthDate = date;
+                   _Filleds.PatientBirthPlace = "hgggh";
+                    _Filleds.PatientGender = patient.Sex;
+                    _Filleds.CivilStatus = patient.CivilStatus;
+                    _Filleds.Age = patient.Age;
+                }
+
+                var pres = dbContext.Prescriptions.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+                if (pres != null)
+                {
+                    _Filleds.DiagnosisNumber = pres.PrescriptionId;
+                    _Filleds.Physician = pres.Clinician;
+                    _Filleds.PatientDiagnosis = pres.Diagnosis;
+                    _Filleds.plan_treatment = pres.Instructions;
+                }
+
+                var examTreat = dbContext.ExaminationTreatments.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+                if (examTreat != null)
+                {
+                    _Filleds.ExaminationDate = examTreat.Date.ToString();
+                    _Filleds.height = examTreat.Height;
+                    _Filleds.BP = examTreat.BloodPressure;
+                    _Filleds.BT = examTreat.Temperature;
+                    _Filleds.weight = examTreat.Weight;
+                    _Filleds.PR = "565";
+                    _Filleds.MedicalNumber = examTreat.ExaminationTreatmentId;
+                }
+            }
+
+
+
+
+
+            ReportFrm reportFrm = new ReportFrm();
+            reportFrm.ShowDialog();
+        }
     }
 }
+

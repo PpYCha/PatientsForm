@@ -9,9 +9,11 @@
 
   <ItemGroup>
     <None Remove="Reports\RptMedCert.rdlc" />
+    <None Remove="Reports\RptMedRecord.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Reports\RptMedRecord.rdlc" />
     <EmbeddedResource Include="Reports\RptMedCert.rdlc" />
   </ItemGroup>
 

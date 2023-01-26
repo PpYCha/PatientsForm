@@ -41,7 +41,7 @@ namespace PatientsForm
             this.dbContext = new PatientContext();
 
             // Uncomment the line below to start fresh with a new database.
-            this.dbContext.Database.EnsureDeleted();
+           // this.dbContext.Database.EnsureDeleted();
             this.dbContext.Database.EnsureCreated();
 
             //this.dbContext.PatientsInformation.Load();
@@ -51,23 +51,23 @@ namespace PatientsForm
 
            
 
-            if (isLogin)
-            {
+            //if (isLogin)
+            //{
                 
                
-            } else
-            {
-                //foreach (Control control in this.Controls)
-                //{
-                //    control.Enabled = false;
-                //}
+            //} else
+            //{
+            //    //foreach (Control control in this.Controls)
+            //    //{
+            //    //    control.Enabled = false;
+            //    //}
 
-                LoginForm loginForm =  new LoginForm();
-                loginForm.TopMost = true;
-                loginForm.ShowDialog();
-                loginForm.BringToFront();
-                loginForm.Activate();
-            }
+            //    LoginForm loginForm =  new LoginForm();
+            //    loginForm.TopMost = true;
+            //    loginForm.ShowDialog();
+            //    loginForm.BringToFront();
+            //    loginForm.Activate();
+            //}
 
         }
 
