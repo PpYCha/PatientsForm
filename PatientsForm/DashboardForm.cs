@@ -49,25 +49,26 @@ namespace PatientsForm
 
             this.patientInformationBindingSource.DataSource = dbContext.PatientsInformation.ToList();
 
-           
 
-            //if (isLogin)
-            //{
-                
-               
-            //} else
-            //{
-            //    //foreach (Control control in this.Controls)
-            //    //{
-            //    //    control.Enabled = false;
-            //    //}
 
-            //    LoginForm loginForm =  new LoginForm();
-            //    loginForm.TopMost = true;
-            //    loginForm.ShowDialog();
-            //    loginForm.BringToFront();
-            //    loginForm.Activate();
-            //}
+            if (isLogin)
+            {
+
+
+            }
+            else
+            {
+                //foreach (Control control in this.Controls)
+                //{
+                //    control.Enabled = false;
+                //}
+
+                LoginForm loginForm = new LoginForm();
+                loginForm.TopMost = true;
+                loginForm.ShowDialog();
+                loginForm.BringToFront();
+                loginForm.Activate();
+            }
 
         }
 
@@ -275,7 +276,36 @@ namespace PatientsForm
 
         private void bt_SaveUser_Click(object sender, EventArgs e)
         {
-            using (var context = new PatientContext())
+            if (dataGridView_Users.SelectedRows.Count > 0)
+            {
+                using (var context = new PatientContext())
+                {
+                    // Get the selected row
+                    var selectedRow = dataGridView_Users.SelectedRows[0];
+
+                    // Get the patient ID of the selected row
+                    int userId = (int)selectedRow.Cells[0].Value;
+
+                    // Retrieve the patient from the database
+                    var user = context.UserAccounts.FirstOrDefault(p => p.UserId == userId);
+
+                    // Update the patient's information
+                    user.Username = tb_uFirstName.Text;
+                    user.FirstName = tb_uFirstName.Text;
+                    user.LastName = tb_uLastName.Text;
+                    user.Password = tb_uPassword.Text;
+                   
+                    user.Usertype = cb_Usertype.Text;
+
+
+                    // Save the changes to the database
+                    context.SaveChanges();
+                }
+
+                MessageBox.Show("Succesfully User Updated");
+            }
+            else
+                using (var context = new PatientContext())
             {
                 var user = new UserAccount
                 {
@@ -291,10 +321,11 @@ namespace PatientsForm
 
                 this.dbContext.UserAccounts.Load();
 
-                this.patientInformationBindingSource.DataSource = dbContext.UserAccounts.Local.ToBindingList();
+                this.userAccountBindingSource.DataSource = dbContext.UserAccounts.Local.ToBindingList();
 
                 this.dataGridView_patient.Refresh();
-            }
+                    MessageBox.Show("Succesfully User Saved");
+                }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -320,11 +351,13 @@ namespace PatientsForm
 
             this.patientInformationBindingSource.DataSource = dbContext.PatientsInformation.ToList();
             patientInformationBindingSource.ResetBindings(false);
-
             dataGridView_patient.Refresh();
-
-
             dataGridView_patient.ClearSelection();
+
+            this.userAccountBindingSource.DataSource = dbContext.UserAccounts.ToList();
+            userAccountBindingSource.ResetBindings(false);
+            dataGridView_Users.Refresh();
+            dataGridView_Users.ClearSelection();
 
 
 
@@ -395,6 +428,15 @@ namespace PatientsForm
                     MessageBox.Show("No patients found with the search text. Please try again.");
                 }
             }
+        }
+
+        private void bt_CancelUser_Click(object sender, EventArgs e)
+        {
+            tb_uFirstName.Text= string.Empty;
+            tb_uLastName.Text= string.Empty;    
+            tb_uPassword.Text= string.Empty;
+            tb_uRetypePassword.Text= string.Empty;
+            refreshPaintList();
         }
     }
 }

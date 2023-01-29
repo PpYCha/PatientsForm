@@ -38,6 +38,17 @@ namespace PatientsForm
             this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.tb_Search = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.dataGridView_patient = new System.Windows.Forms.DataGridView();
+            this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CivilStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diagnosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
             this.materialLabel8 = new ReaLTaiizor.Controls.MaterialLabel();
@@ -87,7 +98,7 @@ namespace PatientsForm
             this.usertypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialCard4 = new ReaLTaiizor.Controls.MaterialCard();
-            this.cb_uRetypePassword = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.tb_uRetypePassword = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.bt_CancelUser = new ReaLTaiizor.Controls.MaterialButton();
             this.bt_SaveUser = new ReaLTaiizor.Controls.MaterialButton();
             this.cb_Usertype = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -102,17 +113,6 @@ namespace PatientsForm
             this.materialCheckBox3 = new ReaLTaiizor.Controls.MaterialCheckBox();
             this.materialCheckBox4 = new ReaLTaiizor.Controls.MaterialCheckBox();
             this.prescriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CivilStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diagnosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard6.SuspendLayout();
@@ -297,6 +297,73 @@ namespace PatientsForm
             this.dataGridView_patient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView_patient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView_patient.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_patient_KeyDown);
+            // 
+            // patientIdDataGridViewTextBoxColumn
+            // 
+            this.patientIdDataGridViewTextBoxColumn.DataPropertyName = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.HeaderText = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.Name = "patientIdDataGridViewTextBoxColumn";
+            this.patientIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // contactNumberDataGridViewTextBoxColumn
+            // 
+            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "ContactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
+            // 
+            // birthdayDataGridViewTextBoxColumn
+            // 
+            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
+            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
+            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            // 
+            // sexDataGridViewTextBoxColumn
+            // 
+            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
+            this.sexDataGridViewTextBoxColumn.HeaderText = "Sex";
+            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            // 
+            // CivilStatus
+            // 
+            this.CivilStatus.DataPropertyName = "CivilStatus";
+            this.CivilStatus.HeaderText = "CivilStatus";
+            this.CivilStatus.Name = "CivilStatus";
+            this.CivilStatus.Visible = false;
+            // 
+            // Diagnosis
+            // 
+            this.Diagnosis.HeaderText = "Diagnosis";
+            this.Diagnosis.Name = "Diagnosis";
             // 
             // patientInformationBindingSource
             // 
@@ -1274,7 +1341,7 @@ namespace PatientsForm
             // materialCard4
             // 
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard4.Controls.Add(this.cb_uRetypePassword);
+            this.materialCard4.Controls.Add(this.tb_uRetypePassword);
             this.materialCard4.Controls.Add(this.bt_CancelUser);
             this.materialCard4.Controls.Add(this.bt_SaveUser);
             this.materialCard4.Controls.Add(this.cb_Usertype);
@@ -1293,37 +1360,37 @@ namespace PatientsForm
             this.materialCard4.Size = new System.Drawing.Size(560, 512);
             this.materialCard4.TabIndex = 1;
             // 
-            // cb_uRetypePassword
+            // tb_uRetypePassword
             // 
-            this.cb_uRetypePassword.AnimateReadOnly = false;
-            this.cb_uRetypePassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cb_uRetypePassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cb_uRetypePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cb_uRetypePassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.cb_uRetypePassword.Depth = 0;
-            this.cb_uRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.cb_uRetypePassword.HideSelection = true;
-            this.cb_uRetypePassword.Hint = "Retype Password";
-            this.cb_uRetypePassword.LeadingIcon = null;
-            this.cb_uRetypePassword.Location = new System.Drawing.Point(23, 232);
-            this.cb_uRetypePassword.MaxLength = 32767;
-            this.cb_uRetypePassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.cb_uRetypePassword.Name = "cb_uRetypePassword";
-            this.cb_uRetypePassword.PasswordChar = '●';
-            this.cb_uRetypePassword.PrefixSuffixText = null;
-            this.cb_uRetypePassword.ReadOnly = false;
-            this.cb_uRetypePassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cb_uRetypePassword.SelectedText = "";
-            this.cb_uRetypePassword.SelectionLength = 0;
-            this.cb_uRetypePassword.SelectionStart = 0;
-            this.cb_uRetypePassword.ShortcutsEnabled = true;
-            this.cb_uRetypePassword.Size = new System.Drawing.Size(506, 48);
-            this.cb_uRetypePassword.TabIndex = 14;
-            this.cb_uRetypePassword.TabStop = false;
-            this.cb_uRetypePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.cb_uRetypePassword.TrailingIcon = null;
-            this.cb_uRetypePassword.UseAccent = false;
-            this.cb_uRetypePassword.UseSystemPasswordChar = true;
+            this.tb_uRetypePassword.AnimateReadOnly = false;
+            this.tb_uRetypePassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tb_uRetypePassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_uRetypePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tb_uRetypePassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tb_uRetypePassword.Depth = 0;
+            this.tb_uRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_uRetypePassword.HideSelection = true;
+            this.tb_uRetypePassword.Hint = "Retype Password";
+            this.tb_uRetypePassword.LeadingIcon = null;
+            this.tb_uRetypePassword.Location = new System.Drawing.Point(23, 232);
+            this.tb_uRetypePassword.MaxLength = 32767;
+            this.tb_uRetypePassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.tb_uRetypePassword.Name = "tb_uRetypePassword";
+            this.tb_uRetypePassword.PasswordChar = '●';
+            this.tb_uRetypePassword.PrefixSuffixText = null;
+            this.tb_uRetypePassword.ReadOnly = false;
+            this.tb_uRetypePassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_uRetypePassword.SelectedText = "";
+            this.tb_uRetypePassword.SelectionLength = 0;
+            this.tb_uRetypePassword.SelectionStart = 0;
+            this.tb_uRetypePassword.ShortcutsEnabled = true;
+            this.tb_uRetypePassword.Size = new System.Drawing.Size(506, 48);
+            this.tb_uRetypePassword.TabIndex = 14;
+            this.tb_uRetypePassword.TabStop = false;
+            this.tb_uRetypePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_uRetypePassword.TrailingIcon = null;
+            this.tb_uRetypePassword.UseAccent = false;
+            this.tb_uRetypePassword.UseSystemPasswordChar = true;
             // 
             // bt_CancelUser
             // 
@@ -1346,6 +1413,7 @@ namespace PatientsForm
             this.bt_CancelUser.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.bt_CancelUser.UseAccentColor = false;
             this.bt_CancelUser.UseVisualStyleBackColor = true;
+            this.bt_CancelUser.Click += new System.EventHandler(this.bt_CancelUser_Click);
             // 
             // bt_SaveUser
             // 
@@ -1620,73 +1688,6 @@ namespace PatientsForm
             this.prescriptionsBindingSource.DataMember = "Prescriptions";
             this.prescriptionsBindingSource.DataSource = this.patientInformationBindingSource;
             // 
-            // patientIdDataGridViewTextBoxColumn
-            // 
-            this.patientIdDataGridViewTextBoxColumn.DataPropertyName = "PatientId";
-            this.patientIdDataGridViewTextBoxColumn.HeaderText = "PatientId";
-            this.patientIdDataGridViewTextBoxColumn.Name = "patientIdDataGridViewTextBoxColumn";
-            this.patientIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // contactNumberDataGridViewTextBoxColumn
-            // 
-            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "ContactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
-            // 
-            // birthdayDataGridViewTextBoxColumn
-            // 
-            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            // 
-            // sexDataGridViewTextBoxColumn
-            // 
-            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
-            this.sexDataGridViewTextBoxColumn.HeaderText = "Sex";
-            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
-            // 
-            // CivilStatus
-            // 
-            this.CivilStatus.DataPropertyName = "CivilStatus";
-            this.CivilStatus.HeaderText = "CivilStatus";
-            this.CivilStatus.Name = "CivilStatus";
-            this.CivilStatus.Visible = false;
-            // 
-            // Diagnosis
-            // 
-            this.Diagnosis.HeaderText = "Diagnosis";
-            this.Diagnosis.Name = "Diagnosis";
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1770,7 +1771,7 @@ namespace PatientsForm
         private ReaLTaiizor.Controls.MaterialButton bt_SaveUser;
         private ReaLTaiizor.Controls.MaterialButton bt_CancelUser;
         private ReaLTaiizor.Controls.MaterialCard materialCard5;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit cb_uRetypePassword;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_uRetypePassword;
         private ReaLTaiizor.Controls.MaterialCard materialCard6;
         private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit tb_Instructions;
         private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit tb_Medicine;
