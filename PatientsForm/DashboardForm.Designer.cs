@@ -33,23 +33,6 @@ namespace PatientsForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.materialTabControl1 = new ReaLTaiizor.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.materialCard6 = new ReaLTaiizor.Controls.MaterialCard();
-            this.bt_RemovePatient = new ReaLTaiizor.Controls.MaterialButton();
-            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
-            this.tb_Search = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.dataGridView_patient = new System.Windows.Forms.DataGridView();
-            this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CivilStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diagnosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
             this.materialLabel8 = new ReaLTaiizor.Controls.MaterialLabel();
             this.dtp_ExamTreat = new System.Windows.Forms.DateTimePicker();
@@ -89,12 +72,30 @@ namespace PatientsForm
             this.tb_MiddleName = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_FirstName = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.tb_Address = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.materialCard6 = new ReaLTaiizor.Controls.MaterialCard();
+            this.bt_RemovePatient = new ReaLTaiizor.Controls.MaterialButton();
+            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
+            this.tb_Search = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.dataGridView_patient = new System.Windows.Forms.DataGridView();
+            this.patientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CivilStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialCard5 = new ReaLTaiizor.Controls.MaterialCard();
             this.dataGridView_Users = new System.Windows.Forms.DataGridView();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usertypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialCard4 = new ReaLTaiizor.Controls.MaterialCard();
@@ -115,12 +116,13 @@ namespace PatientsForm
             this.prescriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.materialCard6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientInformationBindingSource)).BeginInit();
             this.materialCard2.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.materialCard6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientInformationBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
@@ -132,6 +134,7 @@ namespace PatientsForm
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
+            this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -147,7 +150,6 @@ namespace PatientsForm
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.materialCard6);
             this.tabPage1.Controls.Add(this.materialCard2);
             this.tabPage1.Controls.Add(this.materialCard1);
             this.tabPage1.ImageKey = "patient_list_FILL0_wght400_GRAD0_opsz48.png";
@@ -156,218 +158,8 @@ namespace PatientsForm
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1669, 705);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Manage Patient";
+            this.tabPage1.Text = "Add Patient";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // materialCard6
-            // 
-            this.materialCard6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard6.Controls.Add(this.bt_RemovePatient);
-            this.materialCard6.Controls.Add(this.materialButton1);
-            this.materialCard6.Controls.Add(this.tb_Search);
-            this.materialCard6.Controls.Add(this.dataGridView_patient);
-            this.materialCard6.Depth = 0;
-            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard6.Location = new System.Drawing.Point(813, 17);
-            this.materialCard6.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialCard6.Name = "materialCard6";
-            this.materialCard6.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard6.Size = new System.Drawing.Size(829, 332);
-            this.materialCard6.TabIndex = 5;
-            // 
-            // bt_RemovePatient
-            // 
-            this.bt_RemovePatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_RemovePatient.AutoSize = false;
-            this.bt_RemovePatient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bt_RemovePatient.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.bt_RemovePatient.Depth = 0;
-            this.bt_RemovePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_RemovePatient.HighEmphasis = true;
-            this.bt_RemovePatient.Icon = null;
-            this.bt_RemovePatient.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.bt_RemovePatient.Location = new System.Drawing.Point(507, 278);
-            this.bt_RemovePatient.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.bt_RemovePatient.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.bt_RemovePatient.Name = "bt_RemovePatient";
-            this.bt_RemovePatient.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.bt_RemovePatient.Size = new System.Drawing.Size(149, 45);
-            this.bt_RemovePatient.TabIndex = 18;
-            this.bt_RemovePatient.Text = "Remove Patient";
-            this.bt_RemovePatient.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.bt_RemovePatient.UseAccentColor = false;
-            this.bt_RemovePatient.UseVisualStyleBackColor = true;
-            this.bt_RemovePatient.Click += new System.EventHandler(this.bt_RemovePatient_Click);
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton1.Location = new System.Drawing.Point(664, 278);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(149, 45);
-            this.materialButton1.TabIndex = 17;
-            this.materialButton1.Text = "PRINT PATIENT LIST";
-            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
-            // tb_Search
-            // 
-            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_Search.AnimateReadOnly = false;
-            this.tb_Search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.tb_Search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tb_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tb_Search.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tb_Search.Depth = 0;
-            this.tb_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_Search.HideSelection = true;
-            this.tb_Search.Hint = "Name, Patient Id,  Date";
-            this.tb_Search.LeadingIcon = null;
-            this.tb_Search.Location = new System.Drawing.Point(18, 14);
-            this.tb_Search.MaxLength = 32767;
-            this.tb_Search.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.tb_Search.Name = "tb_Search";
-            this.tb_Search.PasswordChar = '\0';
-            this.tb_Search.PrefixSuffixText = null;
-            this.tb_Search.ReadOnly = false;
-            this.tb_Search.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tb_Search.SelectedText = "";
-            this.tb_Search.SelectionLength = 0;
-            this.tb_Search.SelectionStart = 0;
-            this.tb_Search.ShortcutsEnabled = true;
-            this.tb_Search.Size = new System.Drawing.Size(793, 48);
-            this.tb_Search.TabIndex = 5;
-            this.tb_Search.TabStop = false;
-            this.tb_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tb_Search.TrailingIcon = null;
-            this.tb_Search.UseAccent = false;
-            this.tb_Search.UseSystemPasswordChar = false;
-            this.tb_Search.Enter += new System.EventHandler(this.tb_Search_Enter);
-            this.tb_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_Search_KeyDown);
-            this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
-            // 
-            // dataGridView_patient
-            // 
-            this.dataGridView_patient.AllowUserToAddRows = false;
-            this.dataGridView_patient.AllowUserToDeleteRows = false;
-            this.dataGridView_patient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_patient.AutoGenerateColumns = false;
-            this.dataGridView_patient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_patient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.patientIdDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.middleNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.contactNumberDataGridViewTextBoxColumn,
-            this.birthdayDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.sexDataGridViewTextBoxColumn,
-            this.CivilStatus,
-            this.Diagnosis});
-            this.dataGridView_patient.DataSource = this.patientInformationBindingSource;
-            this.dataGridView_patient.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView_patient.Location = new System.Drawing.Point(14, 68);
-            this.dataGridView_patient.MultiSelect = false;
-            this.dataGridView_patient.Name = "dataGridView_patient";
-            this.dataGridView_patient.RowHeadersVisible = false;
-            this.dataGridView_patient.RowTemplate.Height = 25;
-            this.dataGridView_patient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_patient.Size = new System.Drawing.Size(801, 205);
-            this.dataGridView_patient.TabIndex = 0;
-            this.dataGridView_patient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView_patient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            this.dataGridView_patient.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_patient_KeyDown);
-            // 
-            // patientIdDataGridViewTextBoxColumn
-            // 
-            this.patientIdDataGridViewTextBoxColumn.DataPropertyName = "PatientId";
-            this.patientIdDataGridViewTextBoxColumn.HeaderText = "PatientId";
-            this.patientIdDataGridViewTextBoxColumn.Name = "patientIdDataGridViewTextBoxColumn";
-            this.patientIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // contactNumberDataGridViewTextBoxColumn
-            // 
-            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "ContactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
-            // 
-            // birthdayDataGridViewTextBoxColumn
-            // 
-            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            // 
-            // sexDataGridViewTextBoxColumn
-            // 
-            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
-            this.sexDataGridViewTextBoxColumn.HeaderText = "Sex";
-            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
-            // 
-            // CivilStatus
-            // 
-            this.CivilStatus.DataPropertyName = "CivilStatus";
-            this.CivilStatus.HeaderText = "CivilStatus";
-            this.CivilStatus.Name = "CivilStatus";
-            this.CivilStatus.Visible = false;
-            // 
-            // Diagnosis
-            // 
-            this.Diagnosis.HeaderText = "Diagnosis";
-            this.Diagnosis.Name = "Diagnosis";
-            // 
-            // patientInformationBindingSource
-            // 
-            this.patientInformationBindingSource.DataSource = typeof(PatientsForm.models.PatientInformation);
             // 
             // materialCard2
             // 
@@ -926,7 +718,7 @@ namespace PatientsForm
             this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(785, 332);
+            this.materialCard1.Size = new System.Drawing.Size(1625, 332);
             this.materialCard1.TabIndex = 2;
             this.materialCard1.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard1_Paint);
             // 
@@ -1258,6 +1050,220 @@ namespace PatientsForm
             this.tb_Address.UseAccent = false;
             this.tb_Address.UseSystemPasswordChar = false;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.materialCard6);
+            this.tabPage3.ImageKey = "icons8-recovery-48.png";
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1669, 705);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Search Patient";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // materialCard6
+            // 
+            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.bt_RemovePatient);
+            this.materialCard6.Controls.Add(this.materialButton1);
+            this.materialCard6.Controls.Add(this.tb_Search);
+            this.materialCard6.Controls.Add(this.dataGridView_patient);
+            this.materialCard6.Depth = 0;
+            this.materialCard6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard6.Location = new System.Drawing.Point(3, 3);
+            this.materialCard6.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard6.Name = "materialCard6";
+            this.materialCard6.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard6.Size = new System.Drawing.Size(1663, 699);
+            this.materialCard6.TabIndex = 6;
+            // 
+            // bt_RemovePatient
+            // 
+            this.bt_RemovePatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_RemovePatient.AutoSize = false;
+            this.bt_RemovePatient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bt_RemovePatient.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.bt_RemovePatient.Depth = 0;
+            this.bt_RemovePatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_RemovePatient.HighEmphasis = true;
+            this.bt_RemovePatient.Icon = null;
+            this.bt_RemovePatient.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.bt_RemovePatient.Location = new System.Drawing.Point(1500, 639);
+            this.bt_RemovePatient.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.bt_RemovePatient.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.bt_RemovePatient.Name = "bt_RemovePatient";
+            this.bt_RemovePatient.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.bt_RemovePatient.Size = new System.Drawing.Size(149, 45);
+            this.bt_RemovePatient.TabIndex = 18;
+            this.bt_RemovePatient.Text = "Remove Patient";
+            this.bt_RemovePatient.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.bt_RemovePatient.UseAccentColor = false;
+            this.bt_RemovePatient.UseVisualStyleBackColor = true;
+            this.bt_RemovePatient.Click += new System.EventHandler(this.bt_RemovePatient_Click);
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton1.Location = new System.Drawing.Point(1500, 639);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(149, 45);
+            this.materialButton1.TabIndex = 17;
+            this.materialButton1.Text = "PRINT PATIENT LIST";
+            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Visible = false;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // tb_Search
+            // 
+            this.tb_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_Search.AnimateReadOnly = false;
+            this.tb_Search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tb_Search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_Search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tb_Search.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tb_Search.Depth = 0;
+            this.tb_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_Search.HideSelection = true;
+            this.tb_Search.Hint = "Name, Patient Id,  Date";
+            this.tb_Search.LeadingIcon = null;
+            this.tb_Search.Location = new System.Drawing.Point(18, 14);
+            this.tb_Search.MaxLength = 32767;
+            this.tb_Search.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.tb_Search.Name = "tb_Search";
+            this.tb_Search.PasswordChar = '\0';
+            this.tb_Search.PrefixSuffixText = null;
+            this.tb_Search.ReadOnly = false;
+            this.tb_Search.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_Search.SelectedText = "";
+            this.tb_Search.SelectionLength = 0;
+            this.tb_Search.SelectionStart = 0;
+            this.tb_Search.ShortcutsEnabled = true;
+            this.tb_Search.Size = new System.Drawing.Size(1628, 48);
+            this.tb_Search.TabIndex = 5;
+            this.tb_Search.TabStop = false;
+            this.tb_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_Search.TrailingIcon = null;
+            this.tb_Search.UseAccent = false;
+            this.tb_Search.UseSystemPasswordChar = false;
+            this.tb_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_Search_KeyDown);
+            // 
+            // dataGridView_patient
+            // 
+            this.dataGridView_patient.AllowUserToAddRows = false;
+            this.dataGridView_patient.AllowUserToDeleteRows = false;
+            this.dataGridView_patient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_patient.AutoGenerateColumns = false;
+            this.dataGridView_patient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_patient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_patient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.patientIdDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.middleNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.contactNumberDataGridViewTextBoxColumn,
+            this.birthdayDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.sexDataGridViewTextBoxColumn,
+            this.CivilStatus});
+            this.dataGridView_patient.DataSource = this.patientInformationBindingSource;
+            this.dataGridView_patient.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView_patient.Location = new System.Drawing.Point(14, 68);
+            this.dataGridView_patient.MultiSelect = false;
+            this.dataGridView_patient.Name = "dataGridView_patient";
+            this.dataGridView_patient.RowHeadersVisible = false;
+            this.dataGridView_patient.RowTemplate.Height = 25;
+            this.dataGridView_patient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_patient.Size = new System.Drawing.Size(1635, 562);
+            this.dataGridView_patient.TabIndex = 0;
+            this.dataGridView_patient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView_patient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_patient_CellDoubleClick);
+            // 
+            // patientIdDataGridViewTextBoxColumn
+            // 
+            this.patientIdDataGridViewTextBoxColumn.DataPropertyName = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.HeaderText = "PatientId";
+            this.patientIdDataGridViewTextBoxColumn.Name = "patientIdDataGridViewTextBoxColumn";
+            this.patientIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // contactNumberDataGridViewTextBoxColumn
+            // 
+            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "ContactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
+            // 
+            // birthdayDataGridViewTextBoxColumn
+            // 
+            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
+            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
+            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            // 
+            // sexDataGridViewTextBoxColumn
+            // 
+            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
+            this.sexDataGridViewTextBoxColumn.HeaderText = "Sex";
+            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            // 
+            // CivilStatus
+            // 
+            this.CivilStatus.DataPropertyName = "CivilStatus";
+            this.CivilStatus.HeaderText = "CivilStatus";
+            this.CivilStatus.Name = "CivilStatus";
+            this.CivilStatus.Visible = false;
+            // 
+            // patientInformationBindingSource
+            // 
+            this.patientInformationBindingSource.DataSource = typeof(PatientsForm.models.PatientInformation);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
@@ -1296,43 +1302,60 @@ namespace PatientsForm
             this.dataGridView_Users.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIdDataGridViewTextBoxColumn,
+            this.UserId,
             this.firstNameDataGridViewTextBoxColumn1,
             this.lastNameDataGridViewTextBoxColumn1,
+            this.Username,
             this.usertypeDataGridViewTextBoxColumn});
             this.dataGridView_Users.DataSource = this.userAccountBindingSource;
             this.dataGridView_Users.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_Users.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView_Users.Location = new System.Drawing.Point(14, 14);
             this.dataGridView_Users.Name = "dataGridView_Users";
+            this.dataGridView_Users.ReadOnly = true;
+            this.dataGridView_Users.RowHeadersVisible = false;
             this.dataGridView_Users.RowTemplate.Height = 25;
             this.dataGridView_Users.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Users.Size = new System.Drawing.Size(575, 478);
             this.dataGridView_Users.TabIndex = 0;
+            this.dataGridView_Users.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Users_CellContentClick);
+            this.dataGridView_Users.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Users_CellDoubleClick);
             // 
-            // userIdDataGridViewTextBoxColumn
+            // UserId
             // 
-            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.UserId.DataPropertyName = "UserId";
+            this.UserId.HeaderText = "UserId";
+            this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
+            this.UserId.Visible = false;
             // 
             // firstNameDataGridViewTextBoxColumn1
             // 
             this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "FirstName";
             this.firstNameDataGridViewTextBoxColumn1.HeaderText = "FirstName";
             this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
+            this.firstNameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // lastNameDataGridViewTextBoxColumn1
             // 
             this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
             this.lastNameDataGridViewTextBoxColumn1.HeaderText = "LastName";
             this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
+            this.lastNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
             // 
             // usertypeDataGridViewTextBoxColumn
             // 
             this.usertypeDataGridViewTextBoxColumn.DataPropertyName = "Usertype";
             this.usertypeDataGridViewTextBoxColumn.HeaderText = "Usertype";
             this.usertypeDataGridViewTextBoxColumn.Name = "usertypeDataGridViewTextBoxColumn";
+            this.usertypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userAccountBindingSource
             // 
@@ -1614,6 +1637,7 @@ namespace PatientsForm
             this.menuIconList.Images.SetKeyName(0, "manage_accounts_FILL0_wght400_GRAD0_opsz48.png");
             this.menuIconList.Images.SetKeyName(1, "patient_list_FILL0_wght400_GRAD0_opsz48.png");
             this.menuIconList.Images.SetKeyName(2, "home_FILL0_wght400_GRAD0_opsz48.png");
+            this.menuIconList.Images.SetKeyName(3, "icons8-recovery-48.png");
             // 
             // materialCheckBox1
             // 
@@ -1703,15 +1727,16 @@ namespace PatientsForm
             this.Load += new System.EventHandler(this.DashboardForm_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.materialCard6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientInformationBindingSource)).EndInit();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.materialCard6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_patient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientInformationBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.materialCard5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).EndInit();
@@ -1772,7 +1797,6 @@ namespace PatientsForm
         private ReaLTaiizor.Controls.MaterialButton bt_CancelUser;
         private ReaLTaiizor.Controls.MaterialCard materialCard5;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_uRetypePassword;
-        private ReaLTaiizor.Controls.MaterialCard materialCard6;
         private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit tb_Instructions;
         private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit tb_Medicine;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel6;
@@ -1782,23 +1806,22 @@ namespace PatientsForm
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource patientInformationBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView_patient;
         private ReaLTaiizor.Controls.MaterialButton bt_SaveExaminationTreatment;
         private System.Windows.Forms.BindingSource userAccountBindingSource;
         private System.Windows.Forms.DataGridView dataGridView_Users;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usertypeDataGridViewTextBoxColumn;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Diagnosis;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Clinician;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Search;
-        private ReaLTaiizor.Controls.MaterialButton materialButton1;
         private System.Windows.Forms.DateTimePicker dtp_ExamTreat;
         private System.Windows.Forms.DateTimePicker dtp_Birhtday;
-        private ReaLTaiizor.Controls.MaterialButton bt_RemovePatient;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel8;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel7;
+        private System.Windows.Forms.BindingSource prescriptionsBindingSource;
+        private System.Windows.Forms.TabPage tabPage3;
+        private ReaLTaiizor.Controls.MaterialCard materialCard6;
+        private ReaLTaiizor.Controls.MaterialButton bt_RemovePatient;
+        private ReaLTaiizor.Controls.MaterialButton materialButton1;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit tb_Search;
+        private System.Windows.Forms.DataGridView dataGridView_patient;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
@@ -1809,8 +1832,11 @@ namespace PatientsForm
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CivilStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diagnosis;
-        private System.Windows.Forms.BindingSource prescriptionsBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usertypeDataGridViewTextBoxColumn;
     }
 }
 

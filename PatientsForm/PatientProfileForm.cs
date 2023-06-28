@@ -20,6 +20,7 @@ namespace PatientsForm
 
         private PatientContext? dbContext;
         private int patientIdSelected;
+        private int patientPrescriptionId;
 
         public PatientProfileForm(int patientIdSelected)
         {
@@ -29,7 +30,7 @@ namespace PatientsForm
 
         private void PatientProfileForm_Load(object sender, EventArgs e)
         {
-            
+
             this.dbContext = new PatientContext();
 
             populateData();
@@ -39,7 +40,7 @@ namespace PatientsForm
             this.dbContext.Prescriptions.Where(p => p.PatientId == patientIdSelected).Load();
             this.dbContext.ExaminationTreatments.Where(p => p.PatientId == patientIdSelected).Load();
 
-            this.examinationTreatmentBindingSource.DataSource= dbContext.ExaminationTreatments.Local.ToBindingList();
+            this.examinationTreatmentBindingSource.DataSource = dbContext.ExaminationTreatments.Local.ToBindingList();
 
             this.prescriptionBindingSource.DataSource = dbContext.Prescriptions.Local.ToBindingList();
         }
@@ -107,6 +108,11 @@ namespace PatientsForm
             using (var context = new PatientContext())
             {
                 var patient = context.PatientsInformation.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+                //         var patient = context.PatientsInformation
+                //.Include(p => p.ExaminationTreatments) // Include related ExaminationTreatments
+                //.Where(p => p.PatientId == patientIdSelected && p.ExaminationTreatments.Any(et => et.ExaminationTreatmentId == patientPrescriptionId))
+                //.FirstOrDefault();
+
                 if (patient != null)
                 {
                     _Filleds.PatientID = patient.PatientId;
@@ -114,7 +120,7 @@ namespace PatientsForm
                     _Filleds.PatientResAddress = patient.Address;
                     string date = patient.Birthday.Value.Date.ToString("dd/MM/yyyy");
                     _Filleds.PatientBirthDate = date;
-                   _Filleds.PatientBirthPlace = "hgggh";
+                    _Filleds.PatientBirthPlace = "hgggh";
                     _Filleds.PatientGender = patient.Sex;
                     _Filleds.CivilStatus = patient.CivilStatus;
                     _Filleds.Age = patient.Age;
@@ -129,7 +135,9 @@ namespace PatientsForm
                     _Filleds.plan_treatment = pres.Instructions;
                 }
 
-                var examTreat = dbContext.ExaminationTreatments.Where(p => p.PatientId == patientIdSelected).FirstOrDefault();
+
+
+                var examTreat = dbContext.ExaminationTreatments.Where(p => p.PatientId == patientIdSelected && p.ExaminationTreatmentId == patientPrescriptionId).FirstOrDefault();
                 if (examTreat != null)
                 {
                     _Filleds.ExaminationDate = examTreat.Date.ToString();
@@ -149,6 +157,79 @@ namespace PatientsForm
             ReportFrm reportFrm = new ReportFrm();
             reportFrm.ShowDialog();
         }
-    }
-}
 
+        private void dataGridView_examination_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            patientPrescriptionId = Convert.ToInt32(dataGridView_examination.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+        }
+
+
+
+        private void dataGridView_examination_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                using (var ctx = new PatientContext())
+                {
+                    foreach (var item in prescriptionBindingSource.List)
+                    {
+
+                        {
+                            var account = (Prescription)item;
+                            if (account.PrescriptionId <= 0)
+                            {
+                                ctx.Prescriptions.Add(account);
+                            }
+                            else
+                            {
+                                ctx.Prescriptions.Attach(account);
+                                ctx.Entry(account).State = EntityState.Modified;
+                            }
+                        }
+                        ctx.SaveChanges();
+                      
+                    }
+
+
+                }
+            }
+        }
+
+        private void materialLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_prescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                using (var ctx = new PatientContext())
+                {
+                    foreach (var item in examinationTreatmentBindingSource.List)
+                    {
+
+                        {
+                            var account = (ExaminationTreatment)item;
+                            if (account.ExaminationTreatmentId <= 0)
+                            {
+                                ctx.ExaminationTreatments.Add(account);
+                            }
+                            else
+                            {
+                                ctx.ExaminationTreatments.Attach(account);
+                                ctx.Entry(account).State = EntityState.Modified;
+                            }
+                        }
+                        ctx.SaveChanges();
+
+                    }
+
+
+                }
+            }
+        }
+    }
+
+}

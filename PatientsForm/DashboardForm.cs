@@ -22,6 +22,7 @@ namespace PatientsForm
         private PatientContext? dbContext;
         private int patientIdSelected;
         public static Boolean isLogin = false;
+        public static string userType = "Encoder";
 
         public DashboardForm()
         {
@@ -68,6 +69,17 @@ namespace PatientsForm
                 loginForm.ShowDialog();
                 loginForm.BringToFront();
                 loginForm.Activate();
+
+                if (userType == "Encoder")
+                {
+
+                materialTabControl1.TabPages.RemoveAt(materialTabControl1.TabCount - 1);
+                }
+                else { }
+
+
+
+
             }
 
         }
@@ -229,7 +241,7 @@ namespace PatientsForm
             tb_ContactNumber.Text = dataGridView_patient.Rows[e.RowIndex].Cells[5].Value.ToString();
             dtp_Birhtday.Value = Convert.ToDateTime(dataGridView_patient.Rows[e.RowIndex].Cells[6].Value);
 
-            tb_Age.Text = dataGridView_patient.Rows[e.RowIndex].Cells[7].Value.ToString(); 
+            tb_Age.Text = dataGridView_patient.Rows[e.RowIndex].Cells[7].Value.ToString();
             cb_Sex.Text = dataGridView_patient.Rows[e.RowIndex].Cells[8].Value.ToString();
             cb_CivilStatus.Text = dataGridView_patient.Rows[e.RowIndex].Cells[9].Value.ToString();
         }
@@ -405,10 +417,7 @@ namespace PatientsForm
           
         }
 
-        private void dataGridView_patient_KeyDown(object sender, KeyEventArgs e)
-        {
-          
-        }
+       
 
         private void tb_Search_KeyDown(object sender, KeyEventArgs e)
         {
@@ -434,9 +443,36 @@ namespace PatientsForm
         {
             tb_uFirstName.Text= string.Empty;
             tb_uLastName.Text= string.Empty;    
-            tb_uPassword.Text= string.Empty;
+            tb_uPassword.Text= string.Empty; 
             tb_uRetypePassword.Text= string.Empty;
             refreshPaintList();
+        }
+
+        private void dataGridView_patient_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            patientIdSelected = Convert.ToInt32(dataGridView_patient.Rows[e.RowIndex].Cells[0].Value.ToString());
+            PatientProfileForm patientProfileForm = new PatientProfileForm(patientIdSelected);
+
+            patientProfileForm.ShowDialog();
+        }
+
+        private void dataGridView_Users_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_Users_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tb_uFirstName.Text = dataGridView_Users.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tb_uLastName.Text = dataGridView_Users.Rows[e.RowIndex].Cells[2].Value.ToString();
+            tb_uUserName.Text = dataGridView_Users.Rows[e.RowIndex].Cells[3].Value.ToString();
+        
+         
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

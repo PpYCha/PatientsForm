@@ -37,8 +37,8 @@ namespace PatientsForm
                     {
                      
                         DashboardForm.isLogin = true;
-                        
-                    
+
+                        DashboardForm.userType = user.Usertype;
                        
 
                         this.Close();
